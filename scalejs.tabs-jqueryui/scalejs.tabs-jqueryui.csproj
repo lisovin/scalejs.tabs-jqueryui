@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectGuid>{CBB3D24D-A50D-45B2-9F11-0907BF96DF42}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <OutputPath>js</OutputPath>
+    <JSLintSkip>\Scripts\</JSLintSkip>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">.\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <ItemGroup>
+    <Content Include="Properties\build.rjs" />
+    <Content Include="Properties\scalejs.tabs-jqueryui.nuspec" />
+    <Content Include="scalejs.tabs-jqueryui.js" />
+    <Content Include="scalejs.tabs-jqueryui\tabs.html" />
+    <Content Include="scalejs.tabs-jqueryui\tabsBindings.js" />
+    <Content Include="Scripts\almond.js" />
+    <Content Include="Scripts\knockout-3.0.0.debug.js" />
+    <Content Include="Scripts\knockout-3.0.0.js" />
+    <Content Include="Scripts\knockout.mapping-latest.debug.js" />
+    <Content Include="Scripts\knockout.mapping-latest.js" />
+    <Content Include="Scripts\r.js" />
+    <Content Include="Scripts\require.js" />
+    <Content Include="Scripts\scalejs-0.3.3.js" />
+    <Content Include="Scripts\scalejs-0.3.3.min.js" />
+    <Content Include="Scripts\scalejs.functional-0.2.10.js" />
+    <Content Include="Scripts\scalejs.functional-0.2.10.min.js" />
+    <Content Include="Scripts\scalejs.mvvm-0.3.4.5.js" />
+    <Content Include="Scripts\scalejs.mvvm-0.3.4.5.min.js" />
+    <Content Include="Scripts\scalejs.mvvm.bindings.js" />
+    <Content Include="Scripts\scalejs.mvvm.views.js" />
+    <Content Include="Scripts\scalejs.sandbox.js" />
+    <Content Include="Scripts\text.js" />
+    <Content Include="Scripts\_scalejs.intellisense.js" />
+    <Content Include="tools\install.ps1" />
+    <Content Include="tools\uninstall.ps1" />
+    <Content Include="config.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <PropertyGroup>
+    <ScalejsProjectType>Extension</ScalejsProjectType>
+  </PropertyGroup>
+  <PropertyGroup>
+    <RootNamespace>scalejs.tabs_jqueryui</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" />
+  <Import Project="$(SolutionDir)\.scalejs\Scalejs.targets" />
+</Project>

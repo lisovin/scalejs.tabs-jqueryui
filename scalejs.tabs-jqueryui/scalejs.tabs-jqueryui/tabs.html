@@ -1,0 +1,54 @@
+﻿<div id="tabs_template">
+    <div class="tabs" style="height:100%">
+        <div data-class="tabs-header-right" style="position:absolute;right:0px;"></div>
+            <ul class="tab-headers" data-class="tabs-sortable"></ul>
+                <!-- ko class: tabs-items-source -->
+                <div data-class="tabs-content-container">
+                        <!-- ko class:tabs-content-template -->
+                        <!-- /ko -->
+                </div>
+                <!-- /ko -->
+    </div>
+    <div class="tabs-more tabs-menu">
+    <!-- ko foreach: itemsSource -->
+        <div class="tabs-menu-item">
+            <span data-class="tabs-more-item"></span>
+            <div class="iconClose" data-class="tab-close"></div>
+        </div>
+    <!-- /ko -->       
+    </div> 
+        <div class="tabs-add tabs-menu">
+            <!-- ko foreach: menuItems -->
+                <div class="tabs-menu-item" data-bind="text: header, click: addTab"></div>
+            <!-- /ko -->
+    </div>
+</div>
+
+ <div id="tabs_content_default_template">
+         <p data-bind="text: $data"></p>
+</div>
+ 
+ <div id="tabs_more_item_template">
+    <li class="tabs-menu-item">
+     <div class="tabs-header-text" data-class="tabs-header-text"></div>
+     <div class="iconClose" data-class="tab-close"></div></li>
+</div>
+
+ <div id="tabs_header_item_template">
+    <li>
+        <a data-class="tabs-header">
+            <div class="tabs-header-text" data-class="tabs-header-text"></div>
+        </a>
+        <div class="iconClose" data-class="tab-more-close"></div>
+        <div class="iconMore" data-class="tab-more"></div>
+        <!--<div class="iconMax" data-class="tab-max"></div>-->
+    </li>
+</div>
+
+ <div id="tabs_menu_temp_template">
+    <div class="tabs-menu">
+        <!-- ko foreach: menuItems -->
+            <div class="tabs-menu-item" data-bind="text: header, click: addTab"></div>
+        <!-- /ko -->
+    </div> 
+</div>

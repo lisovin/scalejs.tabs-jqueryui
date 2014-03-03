@@ -1,0 +1,7 @@
+﻿({
+	mainConfigFile: '../config.js',
+    include: 'scalejs.tabs-jqueryui',
+    exclude: [
+        'scalejs!core'
+    ]
+})

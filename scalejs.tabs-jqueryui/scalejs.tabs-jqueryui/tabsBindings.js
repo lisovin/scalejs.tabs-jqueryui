@@ -38,7 +38,7 @@ define({
             return {
                 template: {
                     name: this.headerTemplate,
-                    data: this.content
+                    data: this.content,
                 }
             };
         }
@@ -46,24 +46,31 @@ define({
     },
     'tab-more-close': function (ctx) {
         var itemsSource = ctx.$parent.itemsSource,
-            refreshTabs = ctx.$parent.refreshTabs;
+            refreshTabs = ctx.$parent.refreshTabs,
+            active = ctx.$parent.active;
 
         return {
             click: function () {
+                ctx.$data.onRemove && ctx.$data.onRemove();
+                if (active() === ctx.$index()) {
+                    active(0);
+                } else if (active() > ctx.$index()) {
+                    active(active() - 1);
+                }
                 itemsSource.remove(ctx.$data);
-                refreshTabs();
             },
             visible: !ctx.$parent.more()
         };
     },
     'tab-close': function (ctx) {
         var itemsSource = ctx.$parent.itemsSource,
-            refreshTabs = ctx.$parent.refreshTabs;
+            refreshTabs = ctx.$parent.refreshTabs,
+            active = ctx.$parent.active;
 
         return {
             click: function () {
+                ctx.$data.onRemove && ctx.$data.onRemove();
                 itemsSource.remove(ctx.$data);
-                refreshTabs();
             }
         };
     },
